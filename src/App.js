@@ -4,15 +4,24 @@ import './App.css';
 import Button from './Button';
 import Buttons from './Buttons';
 import Display from './Display';
-class App extends Component {
 
+class App extends Component {
+  // constructor(){
+  //   super();
+  //   this.state = {
+  //     operations: []
+  //   };
+  //   //this.handleClick = this.handleClick.bind(this);
+  // }
   state = {
     operations: []
-  };
+   };
 
-  calculation() {
-
-  }
+   calculation = () => {
+      const result = eval((this.state.operations).join(''));
+      //console.log(result);
+         this.setState({operations: [result]});
+   }
 
   handleClick = (event) => {
     const value = event.target.getAttribute('data-value');
