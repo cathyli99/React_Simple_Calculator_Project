@@ -11,7 +11,9 @@ class App extends Component {
   };
 
   calculation() {
-
+    const result = math.eval((this.state.operations).join(''));
+      //console.log(result);
+         this.setState({operations: [result]});
   }
 
   handleClick = (event) => {
